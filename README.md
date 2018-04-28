@@ -9,7 +9,7 @@ Download an unofficial binary for pgmagick.
 
 Add Python's installation path to Window's Environment Variables.
 
-- _Right click **'My Computer'** --> **Properties** --> **Advanced system settings** --> **Environment Variables**_
+- _Right click ***'My Computer' --> Properties --> Advanced system settings --> Environment Variables***_
 
 - Create a new System Variable named `PYTHON_HOME` with value `C:\Python36` (Or whatever the installation path is for Python).
 
@@ -76,3 +76,11 @@ $ python3 image_comparison.py /Users/name/Documents/imagetest.csv /Users/name/Do
 ### Note:
 - In Terminal, depending on the version of Python, either `python` or `python3` will work
 - Ubuntu may require it to be ran as `sudo`
+- Terminal alternative `$ ./hello.py <location of csv file> <location of image folder>` 
+
+## Software Design
+1. I drew out a rough table, writing out all the information that is given in one column and the required output (to-do list) in the other
+2. After completely understanding the client's needs and requirements went off to do some research on how to approach the problem. I looked up both ImageMagick and GraphicsMagick to get a clearer understanding of the tools required to solve this issue. The general consensus was that GraphicsMagick provided faster run times, which was the main reason why I chose it.
+3. The Python API for GraphicsMagick (pgmagick) doesn't have any documentation, so I looked through the C++ documentation for ImageMagick and GraphicsMagick (same documentation) and found some useful methods. `GraphicsMagick.Image().compare()`, `GraphicsMagick.Image().normalizedMeanError()` were helpful in determining similarities between images.
+4. With the correct logic, I implemented the algorithm. After getting the code to work I planned out how to implement a simple command line interface in order to make running the script for a folder of images more user friendly.
+5. With everything working I created my own folder and csv file to unit test the code. I used duplicate images, duplicate images with one being slightly altered, images that are completely different, images that are different sizes, similar images with different sizes, etc.
