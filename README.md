@@ -1,6 +1,7 @@
 ## About
 image_comparison looks through pairs of images and deletes duplicates.  
-Outputs a csv file containing information about similarities between pairs.
+Outputs a csv file containing information about similarities between pairs.  
+Requires a folder of images and a csv file containing the name of the images to be compared.
 ## Requirements & Installation
 Python 3.4+ and pgmagick.
 ### Windows
@@ -74,9 +75,10 @@ E.x.
 $ python3 image_comparison.py /Users/name/Documents/imagetest.csv /Users/name/Documents/images
 ```
 ### Note:
-- In Terminal, depending on the version of Python, either `python` or `python3` will work
+- The input csv file should be in the format: `abc.png,xyz.png`
+- In Terminal, depending on the version of Python, use either `python` or `python3`
 - Ubuntu may require it to be ran as `sudo`
-- Terminal alternative `$ ./hello.py <location of csv file> <location of image folder>` 
+- Terminal alternative `$ ./hello.py <location of csv file> <location of image folder>`
 
 ## Software Design
 1. I drew out a rough table, writing out all the information that is given in one column and the required output (to-do list) in the other
